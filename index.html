@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>K-Board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="clochix.net">
+    <style type="text/css">
+      body {
+        width: 80%;
+        height: 400px;
+        background: #000;
+        color: #0F0;
+        border: 1px solid white;
+        margin: auto;
+        overflow: hidden;
+      }
+      .letter {
+        position: absolute;
+        /*  top: -80px;*/
+        top: 0;
+        font-size: 48px;
+        cursor: pointer;
+        padding: 10px 30px;
+        opacity: 1;
+        display: none;
+      }
+      .letter.falling {
+        display: block;
+        -moz-animation-name: fall, color;
+      }
+      .letter.current {
+        text-shadow: 0px 0px 5px red;
+      }
+      @-moz-keyframes fall {
+        0% { -moz-transform: translate(0px, -32px) rotate(-45deg); }
+        100% { -moz-transform: translate(0px, 400px) rotate(45deg); }
+      }
+      @-moz-keyframes opa {
+        0% { opacity: 0;}
+        10% { opacity: 1;}
+        30% { opacity: 1;}
+      }
+      @-moz-keyframes color {
+        0% { color: #0F0;}
+        50% { color: #880;}
+        100% {color: #F00;}
+      }
+      #main {
+        overflow: hidden;
+        height: 400px;
+      }
+      #keyboard {
+        width: 100%;
+        text-align: center;
+      }
+      #keyboard .line {
+        display: table;
+        margin: auto;
+      }
+      #keyboard .key {
+        display: table-cell;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid #CCC;
+      }
+      #keyboard .key.pressed {
+        background-color: #888;
+      }
+      #keyboard .key.current {
+        box-shadow: 0 0 15px #8FB inset;
+      }
+    </style>
+
+
+  </head>
+
+  <body>
+    <div id="main">
+    </div>
+    <div id="keyboard">
+    </div>
+      <script src="kb.js">
+      </script>
+  </body>
+</html>
+
